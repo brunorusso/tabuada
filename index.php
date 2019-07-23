@@ -179,6 +179,14 @@ if ( $opcao_3 == $resultado )
 	echo "passou 3";
 }
 
+/* Cria prdem para exibicao */
+$ordem=mt_rand(1,4);
+echo "$ordem";
+
+$opcao_4 = $resultado;
+
+
+
 echo "<div id=\"resposta1\"><button class=\"b1\" onclick=\"acertou()\">$resultado</button></div>";
 echo "<div id=\"resposta2\"><button class=\"b2\" onclick=\"errou()\">$opcao_2</button></div>";
 echo "<div id=\"resposta3\"><button class=\"b3\" onclick=\"errou()\">$opcao_1</button></div>";
