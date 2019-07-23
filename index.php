@@ -171,8 +171,5 @@ echo "<div id=\"resposta4\"><button class=\"b4\" onclick=\"errou()\">$opcao_3</b
 <p class="resultadocorreto" id="resultadocorreto"></p>
 <p class="resultadoerrado" id="resultadoerrado"></p>
 
-<?php
-
-?>
 </body>
 </html>
