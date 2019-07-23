@@ -160,6 +160,24 @@ $opcao_1=mt_rand(0,100);
 $opcao_2=mt_rand(0,100);
 $opcao_3=mt_rand(0,100);
 
+/* Valida as opcoes para nao serem repeditas */
+if ( $opcao_1 == $resultado )
+{
+	$opcao_1=mt_rand(0,100);
+	echo "passou 1";
+}
+
+if ( $opcao_2 == $resultado )
+{
+	$opcao_2=mt_rand(0,100);
+	echo "passou 2";
+}
+
+if ( $opcao_3 == $resultado )
+{
+	$opcao_3=mt_rand(0,100);
+	echo "passou 3";
+}
 
 echo "<div id=\"resposta1\"><button class=\"b1\" onclick=\"acertou()\">$resultado</button></div>";
 echo "<div id=\"resposta2\"><button class=\"b2\" onclick=\"errou()\">$opcao_2</button></div>";
