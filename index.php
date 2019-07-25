@@ -10,7 +10,7 @@
 <meta name="robots" content="index, follow">
 <meta name="application-name" content="TABUADA">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabuada do 0 a 10</title>
+<title>Teste de Tabuada do 0 a 10</title>
 </head>
 <style>
         p{
@@ -203,6 +203,14 @@ foreach ($respostas as $opcao)
 <br>
 <p class="resultadocorreto" id="resultadocorreto"></p>
 <p class="resultadoerrado" id="resultadoerrado"></p>
-
+<br>
+<br>
+<br>
+<br>
+<center>
+<a href="tabuada.php">Tabuada do 0 ao 10 Completa</a>
+<br>
+<a href="sobre.html">Sobre este site</a>
+</center>
 </body>
 </html>
