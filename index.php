@@ -9,6 +9,7 @@
 <meta property="og:image" content="https://tabuada.solucaolivre.com.br/logo.png"/>
 <meta name="robots" content="index, follow">
 <meta name="application-name" content="TABUADA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tabuada do 0 a 10</title>
 </head>
 <style>
@@ -34,13 +35,13 @@
         float: left;
         }
         #resposta2{
-        background: blue;
+        background: DodgerBlue;
         border: none;
         width: 90px;
         float: left;
         }
         #resposta3{
-        background: red;
+        background: Orange;
         border: none;
         width: 90px;
         float: left;
@@ -62,7 +63,7 @@
         font-size: 30px;
         }
         .b1 {
-        background-color: #4CAF50; /* Green */
+        background-color: #4CAF50; 
         border: none;
         color: black;
         padding: 15px 32px;
@@ -72,9 +73,10 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+	font-weight: bold;
         }
         .b2 {
-        background-color: blue; /* Green */
+        background-color: DodgerBlue;
         border: none;
         color: black;
         padding: 15px 32px;
@@ -84,9 +86,10 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+	font-weight: bold;
         }
         .b3 {
-        background-color: red; /* Green */
+        background-color: Orange;
         border: none;
         color: black;
         padding: 15px 32px;
@@ -96,9 +99,10 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+	font-weight: bold;
         }
         .b4 {
-        background-color: yellow; /* Green */
+        background-color: yellow; 
         border: none;
         color: black;
         padding: 15px 32px;
@@ -108,25 +112,26 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+	font-weight: bold;
         }
 
 </style>
 <script>
 function errou() {
-        document.getElementById("resultadoerrado").innerHTML = "Não foi desta vez... estude mais! Carregando o próximo desafio.";
+        document.getElementById("resultadoerrado").innerHTML = "Não foi desta vez... estude mais! <br>Carregando o próximo desafio.";
         setTimeout(function(){
                 location.reload();
         }, 2500);
 }
 function acertou() {
-        document.getElementById("resultadocorreto").innerHTML = "Parabéns, você acertou!!! Carregando o próximo desafio.";
+        document.getElementById("resultadocorreto").innerHTML = "Parabéns, você acertou!!! <br>Carregando o próximo desafio.";
         setTimeout(function(){
                 location.reload();
         }, 2500);
 }
 </script>
 </script>
-<body>
+<body bgcolor="#f0f0f0">
 <?php
 
 /*
@@ -164,33 +169,35 @@ $opcao_3=mt_rand(0,100);
 if ( $opcao_1 == $resultado )
 {
 	$opcao_1=mt_rand(0,100);
-	echo "passou 1";
 }
 
 if ( $opcao_2 == $resultado )
 {
 	$opcao_2=mt_rand(0,100);
-	echo "passou 2";
 }
 
 if ( $opcao_3 == $resultado )
 {
 	$opcao_3=mt_rand(0,100);
-	echo "passou 3";
 }
 
 /* Cria prdem para exibicao */
-$ordem=mt_rand(1,4);
-echo "$ordem";
+#$ordem=mt_rand(1,4);
 
-$opcao_4 = $resultado;
+$i=1;
+$respostas = array ("$resultado", "$opcao_1", "$opcao_2", "$opcao_3");
+shuffle($respostas);
+foreach ($respostas as $opcao)
+{
+	if ($opcao == $resultado)
+	{
+		echo "<div id=\"resposta$i\"><button class=\"b$i\" onclick=\"acertou()\">$resultado</button></div>";
+	} else {
+		echo "<div id=\"resposta$i\"><button class=\"b$i\" onclick=\"errou()\">$opcao</button></div>";
+	}
+	$i++;
+}
 
-
-
-echo "<div id=\"resposta1\"><button class=\"b1\" onclick=\"acertou()\">$resultado</button></div>";
-echo "<div id=\"resposta2\"><button class=\"b2\" onclick=\"errou()\">$opcao_2</button></div>";
-echo "<div id=\"resposta3\"><button class=\"b3\" onclick=\"errou()\">$opcao_1</button></div>";
-echo "<div id=\"resposta4\"><button class=\"b4\" onclick=\"errou()\">$opcao_3</button></div>";
 ?>
 <br>
 <br>
